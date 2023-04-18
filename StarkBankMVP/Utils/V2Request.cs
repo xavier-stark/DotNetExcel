@@ -34,16 +34,7 @@ namespace StarkBankMVP
             Dictionary<string, object> query = null
         )
         {
-            string url = "";
-            if (environment == "production")
-            {
-                url = "https://api.starkbank.com/";
-            }
-            if (environment == "sandbox")
-            {
-                url = "https://sandbox.api.starkbank.com/";
-            }
-            url += "v2/" + path;
+            string url = Utils.BaseUrl(environment) + "v2/" + path;
 
             if (query != null)
             {

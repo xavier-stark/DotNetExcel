@@ -90,7 +90,6 @@ namespace StarkBankMVP.Forms
 
                     List<string> tags = transaction["tags"].ToObject<List<string>>();
 
-
                     worksheet.Range["A" + row].Value = new StarkDateTime((string)transaction["created"]).ToString();
                     worksheet.Range["B" + row].Value = getTransactionType(splitPath, tags);
 

@@ -289,7 +289,7 @@
 <comparer xsi:null="1"/>
 </a4:ListDictionary>
 <a1:CodeComment id="ref-57" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
-<text id="ref-117">Planilha8</text>
+<text id="ref-117">GetCharge</text>
 <docComment>false</docComment>
 <CodeObject_x002B_userData href="#ref-118"/>
 </a1:CodeComment>

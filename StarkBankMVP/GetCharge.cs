@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.Tools.Applications.Runtime;
+using StarkBankMVP.Forms;
 using System;
 using System.Data;
 using System.Drawing;
@@ -26,11 +27,18 @@ namespace StarkBankMVP
         /// </summary>
         private void InternalStartup()
         {
-            this.Startup += new System.EventHandler(Planilha8_Startup);
-            this.Shutdown += new System.EventHandler(Planilha8_Shutdown);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Startup += new System.EventHandler(this.Planilha8_Startup);
+            this.Shutdown += new System.EventHandler(this.Planilha8_Shutdown);
+
         }
 
         #endregion
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ViewChargeForm viewChargeForm = new ViewChargeForm();
+            viewChargeForm.ShowDialog();
+        }
     }
 }

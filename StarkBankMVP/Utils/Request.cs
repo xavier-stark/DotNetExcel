@@ -12,6 +12,7 @@ namespace StarkBankMVP
 {
     internal class Request
     {
+
         private static HttpClient makeClient()
         {
             HttpClient client = new HttpClient();
@@ -31,16 +32,7 @@ namespace StarkBankMVP
             Dictionary<string, object> query = null
         )
         {
-            string url = "";
-            if (environment == "production")
-            {
-                url = "https://api.starkbank.com/";
-            }
-            if (environment == "sandbox")
-            {
-                url = "https://sandbox.api.starkbank.com/";
-            }
-            url += "v1/" + path;
+            string url = Utils.BaseUrl(environment) + "v1/" + path;
 
             if (query != null)
             {

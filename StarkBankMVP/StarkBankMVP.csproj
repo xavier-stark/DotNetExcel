@@ -112,6 +112,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\ViewChargeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewChargeForm.Designer.cs">
+      <DependentUpon>ViewChargeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ViewInvoiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,8 +142,15 @@
     <Compile Include="GetStatement.Designer.cs">
       <DependentUpon>GetStatement.Designer.xml</DependentUpon>
     </Compile>
+    <Compile Include="GetCharge.cs">
+      <DependentUpon>StarkBankMVP.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="GetCharge.Designer.cs">
+      <DependentUpon>GetCharge.Designer.xml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\CostCenter.cs" />
     <Compile Include="Resources\DictKey.cs" />
+    <Compile Include="Resources\Boleto.cs" />
     <Compile Include="Resources\Transaction.cs" />
     <Compile Include="Resources\Invoice.cs" />
     <Compile Include="Utils\DateTime.cs" />
@@ -198,6 +211,9 @@
     <Compile Include="Utils\Url.cs" />
     <Compile Include="Utils\Utils.cs" />
     <Compile Include="Utils\V2Request.cs" />
+    <EmbeddedResource Include="Forms\ViewChargeForm.resx">
+      <DependentUpon>ViewChargeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewInvoiceForm.resx">
       <DependentUpon>ViewInvoiceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GetStatement.resx">
       <DependentUpon>GetStatement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetCharge.resx">
+      <DependentUpon>GetCharge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -290,6 +309,11 @@
       <DependentUpon>GetStatement.cs</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="GetCharge.Designer.xml">
+      <DependentUpon>GetCharge.cs</DependentUpon>
+    </None>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -316,6 +340,7 @@
           <HostItem Name="Planilha6" Code="GetInvoices.cs" CanonicalName="Planilha6" DisplayName="Consulta de Invoice Emitidas" Blueprint="GetInvoices.Designer.xml" GeneratedCode="GetInvoices.Designer.cs" />
           <HostItem Name="Planilha1" Code="Planilha1.cs" CanonicalName="Planilha1" DisplayName="Principal" Blueprint="Planilha1.Designer.xml" GeneratedCode="Planilha1.Designer.cs" />
           <HostItem Name="Planilha7" Code="GetStatement.cs" CanonicalName="Planilha7" DisplayName="Extrato" Blueprint="GetStatement.Designer.xml" GeneratedCode="GetStatement.Designer.cs" />
+          <HostItem Name="Planilha8" Code="GetCharge.cs" CanonicalName="Planilha8" DisplayName="Consulta de Boletos Emitidos" Blueprint="GetCharge.Designer.xml" GeneratedCode="GetCharge.Designer.cs" />
           <HostItem Name="ThisWorkbook" Code="ThisWorkbook.cs" CanonicalName="ThisWorkbook" Blueprint="ThisWorkbook.Designer.xml" GeneratedCode="ThisWorkbook.Designer.cs" />
           <HostItem Name="Planilha4" Code="Transfers.cs" CanonicalName="Planilha4" DisplayName="Transferências Com Aprovação" Blueprint="Transfers.Designer.xml" GeneratedCode="Transfers.Designer.cs" />
         </Host>

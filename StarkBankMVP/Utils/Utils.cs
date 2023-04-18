@@ -36,5 +36,18 @@ namespace StarkBankMVP
             }
             return elString.Substring(0, elString.Length - 1);
         }
+
+        public static string BaseUrl(string environment)
+        {
+            if (environment == "production")
+            {
+                return "https://api.starkbank.com/";
+            }
+            if (environment == "sandbox")
+            {
+                return "https://sandbox.api.starkbank.com/";
+            }
+            throw new Exception("Necessario configurar ambiente");
+        }
     }
 }

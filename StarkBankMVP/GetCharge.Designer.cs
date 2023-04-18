@@ -148,7 +148,7 @@ namespace StarkBankMVP {
             this.button1.Text = "Enviar Ordens";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // Planilha8
+            // GetCharge
             // 
             this.button1.BindingContext = this.BindingContext;
         }
