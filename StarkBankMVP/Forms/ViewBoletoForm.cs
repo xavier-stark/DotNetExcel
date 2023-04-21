@@ -14,9 +14,9 @@ using System.Windows.Forms;
 
 namespace StarkBankMVP.Forms
 {
-    public partial class ViewChargeForm : Form
+    public partial class ViewBoletoForm : Form
     {
-        public ViewChargeForm()
+        public ViewBoletoForm()
         {
             InitializeComponent();
         }
@@ -38,7 +38,7 @@ namespace StarkBankMVP.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var worksheet = Globals.GetCharge;
+            var worksheet = Globals.GetBoleto;
 
             Dictionary<string, object> logsPaidByCharge = new Dictionary<string, object>();
             Dictionary<string, object> logsRegisteredByCharge = new Dictionary<string, object>();
@@ -169,7 +169,7 @@ namespace StarkBankMVP.Forms
 
                     try
                     {
-                        respJson = Boleto.Log.Get(cursor, logsParam);
+                        respJson = Boleto.Log.Get("", logsParam);
                     }
                     catch (Exception ex)
                     {
@@ -189,7 +189,7 @@ namespace StarkBankMVP.Forms
 
                     try
                     {
-                        respJson = Boleto.Log.Get(cursor, logsParam);
+                        respJson = Boleto.Log.Get("", logsParam);
                     }
                     catch (Exception ex)
                     {
@@ -222,7 +222,7 @@ namespace StarkBankMVP.Forms
 
         private void SetBoletoInfo(JObject boleto, JObject paidLog, JObject createdLog, int row)
         {
-            var worksheet = Globals.GetCharge;
+            var worksheet = Globals.GetBoleto;
 
             double amount = double.Parse((string)boleto["amount"]) / 100;
             worksheet.Range["J" + row].Value = new StarkDateTime((string)paidLog["created"]).ToString();
@@ -253,8 +253,6 @@ namespace StarkBankMVP.Forms
                 interestCell.Value = interest;
                 interestCell.Font.Color = XlRgbColor.rgbRed;
             }
-
-
         }
 
         private string GetStatus(string status)

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace StarkBankMVP
 {
-    public partial class CreateInvoices
+    public partial class SendInvoices
     {
         private void Planilha5_Startup(object sender, System.EventArgs e)
         {
@@ -26,6 +26,9 @@ namespace StarkBankMVP
         private void InternalStartup()
         {
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             this.Startup += new System.EventHandler(this.Planilha5_Startup);
             this.Shutdown += new System.EventHandler(this.Planilha5_Shutdown);
 
@@ -35,7 +38,11 @@ namespace StarkBankMVP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var worksheet = Globals.CreateInvoices;
+            var worksheet = Globals.SendInvoices;
+
+            int lastRow = worksheet.Cells[worksheet.Rows.Count, "A"].End[XlDirection.xlUp].Row;
+            Range range = worksheet.Range["A1:M" + lastRow];
+            range.ClearContents();
 
             worksheet.Range["A" + TableFormat.HeaderRow].Value = "Nome do Cliente";
             worksheet.Range["B" + TableFormat.HeaderRow].Value = "CPF/CNPJ do Cliente";
@@ -58,7 +65,7 @@ namespace StarkBankMVP
             int iteration = 0;
 
             var initRow = TableFormat.HeaderRow + 1;
-            var lastRow = worksheet.Cells[worksheet.Rows.Count, "A"].End[XlDirection.xlUp].Row;
+            lastRow = worksheet.Cells[worksheet.Rows.Count, "A"].End[XlDirection.xlUp].Row;
 
             List<Dictionary<string, object>> invoices = new List<Dictionary<string, object>>();
             List<int> invoiceNumbers = new List<int>();
@@ -150,6 +157,22 @@ namespace StarkBankMVP
             }
 
             MessageBox.Show(warningMessage + returnMessage + errorMessage);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Globals.Main.Activate();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Utils.LogOut();
         }
     }
 }

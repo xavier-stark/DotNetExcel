@@ -22,6 +22,12 @@ namespace StarkBankMVP {
         
         internal Microsoft.Office.Tools.Excel.Controls.Button button1;
         
+        internal Microsoft.Office.Tools.Excel.Controls.Button button2;
+        
+        internal Microsoft.Office.Tools.Excel.Controls.Button button3;
+        
+        internal Microsoft.Office.Tools.Excel.Controls.Button button4;
+        
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -132,6 +138,9 @@ namespace StarkBankMVP {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeControls() {
             this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "17FA434AF19D0F14BB3186971AC86AABFB7FD1", "17FA434AF19D0F14BB3186971AC86AABFB7FD1", this, "button1");
+            this.button2 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "21156A5D42671D24110290D22610E26CEF0122", "21156A5D42671D24110290D22610E26CEF0122", this, "button2");
+            this.button3 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "36BF4D76D36CAA346A9392633D35C8E7F4F293", "36BF4D76D36CAA346A9392633D35C8E7F4F293", this, "button3");
+            this.button4 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "4BDD5BFBC494C944E75484BA43B9AFC575EDE4", "4BDD5BFBC494C944E75484BA43B9AFC575EDE4", this, "button4");
         }
         
         /// 
@@ -145,12 +154,39 @@ namespace StarkBankMVP {
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Name = "button1";
-            this.button1.Text = "Enviar Ordens";
+            this.button1.Text = "Baixar Extrato";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // Statement
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Name = "button2";
+            this.button2.Text = "Retornar para principal";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button3.Name = "button3";
+            this.button3.Text = "Acessar Conta";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.Control;
+            this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button4.Name = "button4";
+            this.button4.Text = "Sair da Conta";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // GetStatement
             // 
             this.button1.BindingContext = this.BindingContext;
+            this.button2.BindingContext = this.BindingContext;
+            this.button3.BindingContext = this.BindingContext;
+            this.button4.BindingContext = this.BindingContext;
         }
         
         /// 

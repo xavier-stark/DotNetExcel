@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.Tools.Applications.Runtime;
+using StarkBankMVP.Forms;
 using System;
 using System.Data;
 using System.Drawing;
@@ -8,13 +9,13 @@ using Office = Microsoft.Office.Core;
 
 namespace StarkBankMVP
 {
-    public partial class Transfers
+    public partial class GetBoletoEvents
     {
-        private void Planilha4_Startup(object sender, System.EventArgs e)
+        private void Planilha9_Startup(object sender, System.EventArgs e)
         {
         }
 
-        private void Planilha4_Shutdown(object sender, System.EventArgs e)
+        private void Planilha9_Shutdown(object sender, System.EventArgs e)
         {
         }
 
@@ -27,12 +28,11 @@ namespace StarkBankMVP
         private void InternalStartup()
         {
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button3.Click += new System.EventHandler(this.button3_Click);
             this.button4.Click += new System.EventHandler(this.button4_Click);
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            this.Startup += new System.EventHandler(this.Planilha4_Startup);
-            this.Shutdown += new System.EventHandler(this.Planilha4_Shutdown);
+            this.Startup += new System.EventHandler(this.Planilha9_Startup);
+            this.Shutdown += new System.EventHandler(this.Planilha9_Shutdown);
 
         }
 
@@ -40,8 +40,8 @@ namespace StarkBankMVP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            transferOrders TransferOrders = new transferOrders();
-            TransferOrders.ShowDialog();
+            ViewBoletoEventsForm viewChargeEventsForm = new ViewBoletoEventsForm();
+            viewChargeEventsForm.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -58,11 +58,6 @@ namespace StarkBankMVP
         private void button5_Click(object sender, EventArgs e)
         {
             Utils.LogOut();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

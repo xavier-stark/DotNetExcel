@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Security.Cryptography;
 using System.Security.Policy;
@@ -34,6 +35,8 @@ namespace StarkBankMVP
             Dictionary<string, object> query = null
         )
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             string url = Utils.BaseUrl(environment) + "v2/" + path;
 
             if (query != null)

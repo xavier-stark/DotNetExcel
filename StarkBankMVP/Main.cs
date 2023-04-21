@@ -3,12 +3,13 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.VisualStudio.Tools.Applications.Runtime;
+using StarkBankMVP.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
 
 namespace StarkBankMVP
 {
-    public partial class Planilha1
+    public partial class Main
     {
         private void Planilha1_Startup(object sender, System.EventArgs e)
         {
@@ -27,11 +28,16 @@ namespace StarkBankMVP
         private void InternalStartup()
         {
             this.login.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button3.Click += new System.EventHandler(this.button3_Click);
             this.transferOrder.Click += new System.EventHandler(this.transferOrder_Click);
             this.getDictKey.Click += new System.EventHandler(this.getDictKey_Click);
             this.Invoice.Click += new System.EventHandler(this.Invoice_Click);
             this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.Help.Click += new System.EventHandler(this.Help_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             this.Startup += new System.EventHandler(this.Planilha1_Startup);
             this.Shutdown += new System.EventHandler(this.Planilha1_Shutdown);
 
@@ -67,7 +73,33 @@ namespace StarkBankMVP
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Globals.CreateInvoices.Activate();
+            Globals.SendInvoices.Activate();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Utils.LogOut();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Globals.GetStatement.Activate();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Globals.GetBoleto.Activate();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Globals.GetBoletoEvents.Activate();
+        }
+
+        private void Help_Click(object sender, EventArgs e)
+        {
+            ViewHelpForm viewHelpForm = new ViewHelpForm();
+            viewHelpForm.ShowDialog();
         }
     }
 }

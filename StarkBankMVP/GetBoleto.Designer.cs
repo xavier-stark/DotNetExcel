@@ -13,20 +13,28 @@ namespace StarkBankMVP {
     
     
     /// 
-    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(7)]
+    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(6)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
-    public sealed partial class CreateInvoices : Microsoft.Office.Tools.Excel.WorksheetBase {
+    public sealed partial class GetBoleto : Microsoft.Office.Tools.Excel.WorksheetBase {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         private global::System.Object missing = global::System.Type.Missing;
         
         internal Microsoft.Office.Tools.Excel.Controls.Button button1;
         
+        internal Microsoft.Office.Tools.Excel.Controls.Button button3;
+        
+        internal Microsoft.Office.Tools.Excel.Controls.Button button4;
+        
+        internal Microsoft.Office.Tools.Excel.Controls.Button button5;
+        
+        internal Microsoft.Office.Tools.Excel.Controls.Button button6;
+        
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public CreateInvoices(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
-                base(factory, serviceProvider, "Planilha5", "Planilha5") {
+        public GetBoleto(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
+                base(factory, serviceProvider, "Planilha8", "Planilha8") {
         }
         
         /// 
@@ -35,7 +43,7 @@ namespace StarkBankMVP {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void Initialize() {
             base.Initialize();
-            Globals.CreateInvoices = this;
+            Globals.GetBoleto = this;
             global::System.Windows.Forms.Application.EnableVisualStyles();
             this.InitializeCachedData();
             this.InitializeControls();
@@ -131,7 +139,11 @@ namespace StarkBankMVP {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeControls() {
-            this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "1F6AA8BD81815014DA61A5D71870FA81614161", "1F6AA8BD81815014DA61A5D71870FA81614161", this, "button1");
+            this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "192AED9321906F1430518AA91C61F691A49AE1", "192AED9321906F1430518AA91C61F691A49AE1", this, "button1");
+            this.button3 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "2FAFF23AA2246924D782B58F21CB01DE2B8C82", "2FAFF23AA2246924D782B58F21CB01DE2B8C82", this, "button3");
+            this.button4 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "393B0D4DB376B1348C53AA283ED005A8E39383", "393B0D4DB376B1348C53AA283ED005A8E39383", this, "button4");
+            this.button5 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "43443F65340DC5448034B84249A78BF6899C14", "43443F65340DC5448034B84249A78BF6899C14", this, "button5");
+            this.button6 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "55583C5835971E5409E5944455073F47DDC2A5", "55583C5835971E5409E5944455073F47DDC2A5", this, "button6");
         }
         
         /// 
@@ -145,12 +157,46 @@ namespace StarkBankMVP {
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Name = "button1";
-            this.button1.Text = "Consultar Faturas";
+            this.button1.Text = "Consultar Boleto";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // CreateInvoices
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button3.Name = "button3";
+            this.button3.Text = "Retornar para principal";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.Control;
+            this.button4.Name = "button4";
+            this.button4.Text = "Acessar Conta";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.Control;
+            this.button5.Name = "button5";
+            this.button5.Text = "Sair da Conta";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.SystemColors.Control;
+            this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button6.Name = "button6";
+            this.button6.Text = "Limpar Boletos";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // GetBoleto
             // 
             this.button1.BindingContext = this.BindingContext;
+            this.button3.BindingContext = this.BindingContext;
+            this.button4.BindingContext = this.BindingContext;
+            this.button5.BindingContext = this.BindingContext;
+            this.button6.BindingContext = this.BindingContext;
         }
         
         /// 
@@ -163,15 +209,15 @@ namespace StarkBankMVP {
     
     internal sealed partial class Globals {
         
-        private static CreateInvoices _CreateInvoices;
+        private static GetBoleto _GetBoleto;
         
-        internal static CreateInvoices CreateInvoices {
+        internal static GetBoleto GetBoleto {
             get {
-                return _CreateInvoices;
+                return _GetBoleto;
             }
             set {
-                if ((_CreateInvoices == null)) {
-                    _CreateInvoices = value;
+                if ((_GetBoleto == null)) {
+                    _GetBoleto = value;
                 }
                 else {
                     throw new System.NotSupportedException();

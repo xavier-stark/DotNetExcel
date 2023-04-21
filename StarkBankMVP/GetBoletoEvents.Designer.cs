@@ -13,9 +13,9 @@ namespace StarkBankMVP {
     
     
     /// 
-    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(9)]
+    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(7)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
-    public sealed partial class GetInvoices : Microsoft.Office.Tools.Excel.WorksheetBase {
+    public sealed partial class GetBoletoEvents : Microsoft.Office.Tools.Excel.WorksheetBase {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         private global::System.Object missing = global::System.Type.Missing;
@@ -33,8 +33,8 @@ namespace StarkBankMVP {
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public GetInvoices(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
-                base(factory, serviceProvider, "Planilha6", "Planilha6") {
+        public GetBoletoEvents(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
+                base(factory, serviceProvider, "Planilha9", "Planilha9") {
         }
         
         /// 
@@ -43,7 +43,7 @@ namespace StarkBankMVP {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void Initialize() {
             base.Initialize();
-            Globals.GetInvoices = this;
+            Globals.GetBoletoEvents = this;
             global::System.Windows.Forms.Application.EnableVisualStyles();
             this.InitializeCachedData();
             this.InitializeControls();
@@ -139,11 +139,11 @@ namespace StarkBankMVP {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeControls() {
-            this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "1B7A977A61ADF41453E1BBBE1183429619DB11", "1B7A977A61ADF41453E1BBBE1183429619DB11", this, "button1");
-            this.button3 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "232EEE2C927B21244D728DA228DC1AAB22C9E2", "232EEE2C927B21244D728DA228DC1AAB22C9E2", this, "button3");
-            this.button4 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "39558BA7531D2E3412138D1638E54A9A444C63", "39558BA7531D2E3412138D1638E54A9A444C63", this, "button4");
-            this.button5 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "4E23FE0EC4C93C4470948DA849AEEC73F9C744", "4E23FE0EC4C93C4470948DA849AEEC73F9C744", this, "button5");
-            this.button6 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "51A95A66553942547D759A7153A00908FCA885", "51A95A66553942547D759A7153A00908FCA885", this, "button6");
+            this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "19726D3BD1AD01142191B2C41B5B2D13E650B1", "19726D3BD1AD01142191B2C41B5B2D13E650B1", this, "button1");
+            this.button3 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "207D2713820AB8246622A7CD26A57A9DCA2162", "207D2713820AB8246622A7CD26A57A9DCA2162", this, "button3");
+            this.button4 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "32381B0E43363B340003842439CB6D4833D8F3", "32381B0E43363B340003842439CB6D4833D8F3", this, "button4");
+            this.button5 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "42576A9D548EA54490F4BA2045852D9EEA0264", "42576A9D548EA54490F4BA2045852D9EEA0264", this, "button5");
+            this.button6 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "5B4A34D975B853543985A7E75523690B60EC35", "5B4A34D975B853543985A7E75523690B60EC35", this, "button6");
         }
         
         /// 
@@ -157,7 +157,7 @@ namespace StarkBankMVP {
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Name = "button1";
-            this.button1.Text = "Emitir Invoice Pix";
+            this.button1.Text = "Consultar históricos de boletos emitidos";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -184,13 +184,12 @@ namespace StarkBankMVP {
             // 
             // button6
             // 
-            this.button6.AutoSize = true;
             this.button6.BackColor = System.Drawing.SystemColors.Control;
             this.button6.Name = "button6";
-            this.button6.Text = "Limpar Invoices";
+            this.button6.Text = "Limpar Boletos";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // GetInvoices
+            // GetBoletoEvents
             // 
             this.button1.BindingContext = this.BindingContext;
             this.button3.BindingContext = this.BindingContext;
@@ -209,15 +208,15 @@ namespace StarkBankMVP {
     
     internal sealed partial class Globals {
         
-        private static GetInvoices _GetInvoices;
+        private static GetBoletoEvents _GetBoletoEvents;
         
-        internal static GetInvoices GetInvoices {
+        internal static GetBoletoEvents GetBoletoEvents {
             get {
-                return _GetInvoices;
+                return _GetBoletoEvents;
             }
             set {
-                if ((_GetInvoices == null)) {
-                    _GetInvoices = value;
+                if ((_GetBoletoEvents == null)) {
+                    _GetBoletoEvents = value;
                 }
                 else {
                     throw new System.NotSupportedException();

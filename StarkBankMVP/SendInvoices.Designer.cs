@@ -13,9 +13,9 @@ namespace StarkBankMVP {
     
     
     /// 
-    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(9)]
+    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(10)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
-    public sealed partial class GetInvoices : Microsoft.Office.Tools.Excel.WorksheetBase {
+    public sealed partial class SendInvoices : Microsoft.Office.Tools.Excel.WorksheetBase {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         private global::System.Object missing = global::System.Type.Missing;
@@ -33,8 +33,8 @@ namespace StarkBankMVP {
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public GetInvoices(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
-                base(factory, serviceProvider, "Planilha6", "Planilha6") {
+        public SendInvoices(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
+                base(factory, serviceProvider, "Planilha5", "Planilha5") {
         }
         
         /// 
@@ -43,7 +43,7 @@ namespace StarkBankMVP {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void Initialize() {
             base.Initialize();
-            Globals.GetInvoices = this;
+            Globals.SendInvoices = this;
             global::System.Windows.Forms.Application.EnableVisualStyles();
             this.InitializeCachedData();
             this.InitializeControls();
@@ -139,11 +139,11 @@ namespace StarkBankMVP {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeControls() {
-            this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "1B7A977A61ADF41453E1BBBE1183429619DB11", "1B7A977A61ADF41453E1BBBE1183429619DB11", this, "button1");
-            this.button3 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "232EEE2C927B21244D728DA228DC1AAB22C9E2", "232EEE2C927B21244D728DA228DC1AAB22C9E2", this, "button3");
-            this.button4 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "39558BA7531D2E3412138D1638E54A9A444C63", "39558BA7531D2E3412138D1638E54A9A444C63", this, "button4");
-            this.button5 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "4E23FE0EC4C93C4470948DA849AEEC73F9C744", "4E23FE0EC4C93C4470948DA849AEEC73F9C744", this, "button5");
-            this.button6 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "51A95A66553942547D759A7153A00908FCA885", "51A95A66553942547D759A7153A00908FCA885", this, "button6");
+            this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "1F6AA8BD81815014DA61A5D71870FA81614161", "1F6AA8BD81815014DA61A5D71870FA81614161", this, "button1");
+            this.button3 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "2596667A2285C4241122B3CF25CD7B218043C2", "2596667A2285C4241122B3CF25CD7B218043C2", this, "button3");
+            this.button4 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "3980FC20730620345FE3A45431A52DCB072F13", "3980FC20730620345FE3A45431A52DCB072F13", this, "button4");
+            this.button5 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "423CD9C0343555445FB48C9D4CF7D65D1F3284", "423CD9C0343555445FB48C9D4CF7D65D1F3284", this, "button5");
+            this.button6 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "560AC6FB15F17754F6558A0F58035E0AF7ED85", "560AC6FB15F17754F6558A0F58035E0AF7ED85", this, "button6");
         }
         
         /// 
@@ -184,13 +184,12 @@ namespace StarkBankMVP {
             // 
             // button6
             // 
-            this.button6.AutoSize = true;
             this.button6.BackColor = System.Drawing.SystemColors.Control;
             this.button6.Name = "button6";
             this.button6.Text = "Limpar Invoices";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // GetInvoices
+            // SendInvoices
             // 
             this.button1.BindingContext = this.BindingContext;
             this.button3.BindingContext = this.BindingContext;
@@ -209,15 +208,15 @@ namespace StarkBankMVP {
     
     internal sealed partial class Globals {
         
-        private static GetInvoices _GetInvoices;
+        private static SendInvoices _SendInvoices;
         
-        internal static GetInvoices GetInvoices {
+        internal static SendInvoices SendInvoices {
             get {
-                return _GetInvoices;
+                return _SendInvoices;
             }
             set {
-                if ((_GetInvoices == null)) {
-                    _GetInvoices = value;
+                if ((_SendInvoices == null)) {
+                    _SendInvoices = value;
                 }
                 else {
                     throw new System.NotSupportedException();

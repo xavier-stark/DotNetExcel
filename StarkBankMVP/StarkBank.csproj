@@ -8,7 +8,7 @@
     <NoStandardLibraries>false</NoStandardLibraries>
     <RootNamespace>StarkBankMVP</RootNamespace>
     <AssemblyName>StarkBankMVP</AssemblyName>
-    <VSTO_HostDocumentName>StarkBankMVP.xlsx</VSTO_HostDocumentName>
+    <VSTO_HostDocumentName>StarkBank.xlsx</VSTO_HostDocumentName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <OfficeApplication>Excel</OfficeApplication>
@@ -112,11 +112,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\ViewChargeForm.cs">
+    <Compile Include="Forms\ViewBoletoEventsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ViewChargeForm.Designer.cs">
-      <DependentUpon>ViewChargeForm.cs</DependentUpon>
+    <Compile Include="Forms\ViewBoletoEventsForm.Designer.cs">
+      <DependentUpon>ViewBoletoEventsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewBoletoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewBoletoForm.Designer.cs">
+      <DependentUpon>ViewBoletoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewHelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewHelpForm.Designer.cs">
+      <DependentUpon>ViewHelpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ViewInvoiceForm.cs">
       <SubType>Form</SubType>
@@ -131,22 +143,36 @@
       <DependentUpon>ViewStatementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GetInvoices.cs">
-      <DependentUpon>StarkBankMVP.xlsx</DependentUpon>
+      <DependentUpon>StarkBank.xlsx</DependentUpon>
     </Compile>
     <Compile Include="GetInvoices.Designer.cs">
       <DependentUpon>GetInvoices.Designer.xml</DependentUpon>
     </Compile>
     <Compile Include="GetStatement.cs">
-      <DependentUpon>StarkBankMVP.xlsx</DependentUpon>
+      <DependentUpon>StarkBank.xlsx</DependentUpon>
     </Compile>
     <Compile Include="GetStatement.Designer.cs">
       <DependentUpon>GetStatement.Designer.xml</DependentUpon>
     </Compile>
-    <Compile Include="GetCharge.cs">
-      <DependentUpon>StarkBankMVP.xlsx</DependentUpon>
+    <Compile Include="GetBoleto.cs">
+      <DependentUpon>StarkBank.xlsx</DependentUpon>
     </Compile>
-    <Compile Include="GetCharge.Designer.cs">
-      <DependentUpon>GetCharge.Designer.xml</DependentUpon>
+    <Compile Include="GetBoleto.Designer.cs">
+      <DependentUpon>GetBoleto.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="GetBoletoEvents.cs">
+      <DependentUpon>StarkBank.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="GetBoletoEvents.Designer.cs">
+      <DependentUpon>GetBoletoEvents.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Balance.cs" />
+    <Compile Include="Resources\Session.cs" />
+    <Compile Include="SendBoleto.cs">
+      <DependentUpon>StarkBank.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="SendBoleto.Designer.cs">
+      <DependentUpon>SendBoleto.Designer.xml</DependentUpon>
     </Compile>
     <Compile Include="Resources\CostCenter.cs" />
     <Compile Include="Resources\DictKey.cs" />
@@ -162,29 +188,29 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\PaymentRequest.cs" />
-    <Compile Include="Planilha1.cs">
-      <DependentUpon>StarkBankMVP.xlsx</DependentUpon>
+    <Compile Include="Main.cs">
+      <DependentUpon>StarkBank.xlsx</DependentUpon>
     </Compile>
-    <Compile Include="Planilha1.Designer.cs">
-      <DependentUpon>Planilha1.Designer.xml</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.Designer.xml</DependentUpon>
     </Compile>
     <Compile Include="Credentials.cs">
-      <DependentUpon>StarkBankMVP.xlsx</DependentUpon>
+      <DependentUpon>StarkBank.xlsx</DependentUpon>
     </Compile>
     <Compile Include="Credentials.Designer.cs">
       <DependentUpon>Credentials.Designer.xml</DependentUpon>
     </Compile>
     <Compile Include="GetDictKeys.cs">
-      <DependentUpon>StarkBankMVP.xlsx</DependentUpon>
+      <DependentUpon>StarkBank.xlsx</DependentUpon>
     </Compile>
     <Compile Include="GetDictKeys.Designer.cs">
       <DependentUpon>GetDictKeys.Designer.xml</DependentUpon>
     </Compile>
-    <Compile Include="CreateInvoices.cs">
-      <DependentUpon>StarkBankMVP.xlsx</DependentUpon>
+    <Compile Include="SendInvoices.cs">
+      <DependentUpon>StarkBank.xlsx</DependentUpon>
     </Compile>
-    <Compile Include="CreateInvoices.Designer.cs">
-      <DependentUpon>CreateInvoices.Designer.xml</DependentUpon>
+    <Compile Include="SendInvoices.Designer.cs">
+      <DependentUpon>SendInvoices.Designer.xml</DependentUpon>
     </Compile>
     <Compile Include="Forms\transferOrders.cs">
       <SubType>Form</SubType>
@@ -193,7 +219,7 @@
       <DependentUpon>transferOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="Transfers.cs">
-      <DependentUpon>StarkBankMVP.xlsx</DependentUpon>
+      <DependentUpon>StarkBank.xlsx</DependentUpon>
     </Compile>
     <Compile Include="Transfers.Designer.cs">
       <DependentUpon>Transfers.Designer.xml</DependentUpon>
@@ -203,7 +229,7 @@
     <Compile Include="Utils\Response.cs" />
     <Compile Include="Utils\TableFormat.cs" />
     <Compile Include="ThisWorkbook.cs">
-      <DependentUpon>StarkBankMVP.xlsx</DependentUpon>
+      <DependentUpon>StarkBank.xlsx</DependentUpon>
     </Compile>
     <Compile Include="ThisWorkbook.Designer.cs">
       <DependentUpon>ThisWorkbook.Designer.xml</DependentUpon>
@@ -211,8 +237,14 @@
     <Compile Include="Utils\Url.cs" />
     <Compile Include="Utils\Utils.cs" />
     <Compile Include="Utils\V2Request.cs" />
-    <EmbeddedResource Include="Forms\ViewChargeForm.resx">
-      <DependentUpon>ViewChargeForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ViewBoletoEventsForm.resx">
+      <DependentUpon>ViewBoletoEventsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewBoletoForm.resx">
+      <DependentUpon>ViewBoletoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewHelpForm.resx">
+      <DependentUpon>ViewHelpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewInvoiceForm.resx">
       <DependentUpon>ViewInvoiceForm.cs</DependentUpon>
@@ -229,17 +261,23 @@
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planilha1.resx">
-      <DependentUpon>Planilha1.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateInvoices.resx">
-      <DependentUpon>CreateInvoices.cs</DependentUpon>
+    <EmbeddedResource Include="SendInvoices.resx">
+      <DependentUpon>SendInvoices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GetStatement.resx">
       <DependentUpon>GetStatement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GetCharge.resx">
-      <DependentUpon>GetCharge.cs</DependentUpon>
+    <EmbeddedResource Include="GetBoleto.resx">
+      <DependentUpon>GetBoleto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetBoletoEvents.resx">
+      <DependentUpon>GetBoletoEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendBoleto.resx">
+      <DependentUpon>SendBoleto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -266,7 +304,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="StarkBankMVP.xlsx" />
+    <None Include="StarkBank.xlsx" />
     <None Include="StarkBankMVP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -275,8 +313,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Planilha1.Designer.xml">
-      <DependentUpon>Planilha1.cs</DependentUpon>
+    <None Include="Main.Designer.xml">
+      <DependentUpon>Main.cs</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -295,8 +333,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="CreateInvoices.Designer.xml">
-      <DependentUpon>CreateInvoices.cs</DependentUpon>
+    <None Include="SendInvoices.Designer.xml">
+      <DependentUpon>SendInvoices.cs</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -310,8 +348,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GetCharge.Designer.xml">
-      <DependentUpon>GetCharge.cs</DependentUpon>
+    <None Include="GetBoleto.Designer.xml">
+      <DependentUpon>GetBoleto.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GetBoletoEvents.Designer.xml">
+      <DependentUpon>GetBoletoEvents.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SendBoleto.Designer.xml">
+      <DependentUpon>SendBoleto.cs</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>
@@ -332,15 +380,17 @@
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="StarkBankMVP.xlsx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\root\Office16\excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]StarkBankMVP.xlsx&quot;" />
-        <Host Name="Excel Document" Path=".\StarkBankMVP.xlsx" GeneratedCodeNamespace="StarkBankMVP">
-          <HostItem Name="Planilha5" Code="CreateInvoices.cs" CanonicalName="Planilha5" DisplayName="Emissão de Invoice Pix" Blueprint="CreateInvoices.Designer.xml" GeneratedCode="CreateInvoices.Designer.cs" />
+        <ProjectProperties HostName="StarkBank.xlsx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\root\Office16\excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]StarkBank.xlsx&quot;" />
+        <Host Name="Excel Document" Path=".\StarkBank.xlsx" GeneratedCodeNamespace="StarkBankMVP">
+          <HostItem Name="Planilha5" Code="SendInvoices.cs" CanonicalName="Planilha5" DisplayName="Emissão de Invoice Pix" Blueprint="SendInvoices.Designer.xml" GeneratedCode="SendInvoices.Designer.cs" />
           <HostItem Name="Planilha2" Code="Credentials.cs" CanonicalName="Planilha2" CanActivate="false" DisplayName="Credentials" Blueprint="Credentials.Designer.xml" GeneratedCode="Credentials.Designer.cs" />
+          <HostItem Name="Planilha8" Code="GetBoleto.cs" CanonicalName="Planilha8" DisplayName="Consulta de Boletos Emitidos" Blueprint="GetBoleto.Designer.xml" GeneratedCode="GetBoleto.Designer.cs" />
+          <HostItem Name="Planilha9" Code="GetBoletoEvents.cs" CanonicalName="Planilha9" DisplayName="Histórico de Boletos Emitido" Blueprint="GetBoletoEvents.Designer.xml" GeneratedCode="GetBoletoEvents.Designer.cs" />
           <HostItem Name="Planilha3" Code="getDictKeys.cs" CanonicalName="Planilha3" DisplayName="Consulta de Chaves Pix" Blueprint="getDictKeys.Designer.xml" GeneratedCode="getDictKeys.Designer.cs" />
           <HostItem Name="Planilha6" Code="GetInvoices.cs" CanonicalName="Planilha6" DisplayName="Consulta de Invoice Emitidas" Blueprint="GetInvoices.Designer.xml" GeneratedCode="GetInvoices.Designer.cs" />
-          <HostItem Name="Planilha1" Code="Planilha1.cs" CanonicalName="Planilha1" DisplayName="Principal" Blueprint="Planilha1.Designer.xml" GeneratedCode="Planilha1.Designer.cs" />
           <HostItem Name="Planilha7" Code="GetStatement.cs" CanonicalName="Planilha7" DisplayName="Extrato" Blueprint="GetStatement.Designer.xml" GeneratedCode="GetStatement.Designer.cs" />
-          <HostItem Name="Planilha8" Code="GetCharge.cs" CanonicalName="Planilha8" DisplayName="Consulta de Boletos Emitidos" Blueprint="GetCharge.Designer.xml" GeneratedCode="GetCharge.Designer.cs" />
+          <HostItem Name="Planilha1" Code="Main.cs" CanonicalName="Planilha1" DisplayName="Principal" Blueprint="Main.Designer.xml" GeneratedCode="Main.Designer.cs" />
+          <HostItem Name="Planilha10" Code="SendBoleto.cs" CanonicalName="Planilha10" DisplayName="Emissão de Boleto" Blueprint="SendBoleto.Designer.xml" GeneratedCode="SendBoleto.Designer.cs" />
           <HostItem Name="ThisWorkbook" Code="ThisWorkbook.cs" CanonicalName="ThisWorkbook" Blueprint="ThisWorkbook.Designer.xml" GeneratedCode="ThisWorkbook.Designer.cs" />
           <HostItem Name="Planilha4" Code="Transfers.cs" CanonicalName="Planilha4" DisplayName="Transferências Com Aprovação" Blueprint="Transfers.Designer.xml" GeneratedCode="Transfers.Designer.cs" />
         </Host>

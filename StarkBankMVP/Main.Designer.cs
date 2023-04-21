@@ -15,7 +15,7 @@ namespace StarkBankMVP {
     /// 
     [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(1)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
-    public sealed partial class Planilha1 : Microsoft.Office.Tools.Excel.WorksheetBase {
+    public sealed partial class Main : Microsoft.Office.Tools.Excel.WorksheetBase {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         private global::System.Object missing = global::System.Type.Missing;
@@ -36,10 +36,16 @@ namespace StarkBankMVP {
         
         internal Microsoft.Office.Tools.Excel.Controls.Button Help;
         
+        internal Microsoft.Office.Tools.Excel.Controls.Button button1;
+        
+        internal Microsoft.Office.Tools.Excel.Controls.Button button8;
+        
+        internal Microsoft.Office.Tools.Excel.Controls.Button button9;
+        
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Planilha1(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
+        public Main(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
                 base(factory, serviceProvider, "Planilha1", "Planilha1") {
         }
         
@@ -49,7 +55,7 @@ namespace StarkBankMVP {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void Initialize() {
             base.Initialize();
-            Globals.Planilha1 = this;
+            Globals.Main = this;
             global::System.Windows.Forms.Application.EnableVisualStyles();
             this.InitializeCachedData();
             this.InitializeControls();
@@ -153,6 +159,9 @@ namespace StarkBankMVP {
             this.Invoice = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "1DB344D2F14249140061BD5D11E614111405C1", "1DB344D2F14249140061BD5D11E614111405C1", this, "Invoice");
             this.button7 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "1626B229C1652514446181B314A00A77AF6681", "1626B229C1652514446181B314A00A77AF6681", this, "button7");
             this.Help = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "1F70BF05619C7F14D001A2031EA2288CEEF621", "1F70BF05619C7F14D001A2031EA2288CEEF621", this, "Help");
+            this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "1D58F8DCE161321493A19D8C10118F3363B411", "1D58F8DCE161321493A19D8C10118F3363B411", this, "button1");
+            this.button8 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "10F831FB013D30140151820D1AB0BB140FD961", "10F831FB013D30140151820D1AB0BB140FD961", this, "button8");
+            this.button9 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "28A34ED1D2633F2429D291182761C070389522", "28A34ED1D2633F2429D291182761C070389522", this, "button9");
         }
         
         /// 
@@ -225,7 +234,31 @@ namespace StarkBankMVP {
             this.Help.Text = "Ajuda";
             this.Help.UseVisualStyleBackColor = false;
             // 
-            // Planilha1
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Name = "button1";
+            this.button1.Text = "Extrato";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.SystemColors.Control;
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button8.Name = "button8";
+            this.button8.Text = "Consulta de Boletos Emitidos";
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.SystemColors.Control;
+            this.button9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button9.Name = "button9";
+            this.button9.Text = "Históricos de Boletos Emitidos";
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // Main
             // 
             this.login.BindingContext = this.BindingContext;
             this.button2.BindingContext = this.BindingContext;
@@ -235,6 +268,9 @@ namespace StarkBankMVP {
             this.Invoice.BindingContext = this.BindingContext;
             this.button7.BindingContext = this.BindingContext;
             this.Help.BindingContext = this.BindingContext;
+            this.button1.BindingContext = this.BindingContext;
+            this.button8.BindingContext = this.BindingContext;
+            this.button9.BindingContext = this.BindingContext;
         }
         
         /// 
@@ -247,15 +283,15 @@ namespace StarkBankMVP {
     
     internal sealed partial class Globals {
         
-        private static Planilha1 _Planilha1;
+        private static Main _Main;
         
-        internal static Planilha1 Planilha1 {
+        internal static Main Main {
             get {
-                return _Planilha1;
+                return _Main;
             }
             set {
-                if ((_Planilha1 == null)) {
-                    _Planilha1 = value;
+                if ((_Main == null)) {
+                    _Main = value;
                 }
                 else {
                     throw new System.NotSupportedException();
