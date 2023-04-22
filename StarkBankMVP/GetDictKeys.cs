@@ -4,6 +4,7 @@ using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace StarkBankMVP
 {
@@ -54,14 +55,15 @@ namespace StarkBankMVP
             worksheet.Range["J" + TableFormat.HeaderRow].Value = "Tipo de Conta";
             worksheet.Range["K" + TableFormat.HeaderRow].Value = "externalId";
 
-            var initRow = TableFormat.HeaderRow + 1;
-            var lastRow = worksheet.Cells[worksheet.Rows.Count, "A"].End[XlDirection.xlUp].Row;
-            List<Dictionary<string, object>> jsonData = new List<Dictionary<string, object>>();
+            int initRow = TableFormat.HeaderRow + 1;
+            int lastRow = worksheet.Cells[worksheet.Rows.Count, "A"].End[XlDirection.xlUp].Row;
 
-            for (int row = initRow; row <= lastRow; row++)
+            Parallel.For(initRow, lastRow + 1, rowIndex =>
             {
 
-                string keyId = worksheet.Range["A" + row].Value;
+                string keyId = worksheet.Range["A" + rowIndex].Value;
+                
+                List<Dictionary<string, object>> jsonData = new List<Dictionary<string, object>>();
 
                 JObject resp;
 
@@ -71,20 +73,20 @@ namespace StarkBankMVP
                     jsonData.Add(
                         new Dictionary<string, object>
                         {
-                            {"id", row },
+                            {"id", rowIndex },
                             {"keyId", keyId },
                             {"Time", currentTime.ToString("yyyy-MM-ddTHH:mm:ss.fffZ") }
-                        }    
+                        }
                     );
                     resp = DictKey.Get(keyId);
 
                     JObject dictKey = (JObject)resp["key"];
-                    worksheet.Range["E" + row].Value = dictKey["name"];
-                    worksheet.Range["F" + row].Value = dictKey["taxId"];
-                    worksheet.Range["G" + row].Value = dictKey["ispb"];
-                    worksheet.Range["H" + row].Value = dictKey["branchCode"];
-                    worksheet.Range["I" + row].Value = dictKey["accountNumber"];
-                    worksheet.Range["J" + row].Value = dictKey["accountType"];
+                    worksheet.Range["E" + rowIndex].Value = dictKey["name"];
+                    worksheet.Range["F" + rowIndex].Value = dictKey["taxId"];
+                    worksheet.Range["G" + rowIndex].Value = dictKey["ispb"];
+                    worksheet.Range["H" + rowIndex].Value = dictKey["branchCode"];
+                    worksheet.Range["I" + rowIndex].Value = dictKey["accountNumber"];
+                    worksheet.Range["J" + rowIndex].Value = dictKey["accountType"];
                 }
                 catch (Exception ex)
                 {
@@ -93,7 +95,7 @@ namespace StarkBankMVP
                 }
 
                 string jsonString = Json.Encode(jsonData);
-            }
+            });
 
             MoveToTransfer();
         }

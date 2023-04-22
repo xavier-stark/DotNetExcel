@@ -41,7 +41,7 @@ namespace StarkBankMVP.Forms
             }
 
             int lastRow = worksheet.Cells[worksheet.Rows.Count, "A"].End[XlDirection.xlUp].Row;
-            Range range = worksheet.Range["A1:I" + lastRow];
+            Range range = worksheet.Range["A" + TableFormat.HeaderRow + ":I" + lastRow];
             range.ClearContents();
 
             worksheet.Range["A" + TableFormat.HeaderRow].Value = "Data";

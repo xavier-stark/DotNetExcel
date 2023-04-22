@@ -29,7 +29,6 @@ namespace StarkBankMVP
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-                Close();
                 return;
             }
 
@@ -57,7 +56,6 @@ namespace StarkBankMVP
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-                Close();
                 return;
             }
 
@@ -70,7 +68,6 @@ namespace StarkBankMVP
             Globals.Credentials.Range["A13"].Value = "Access ID";
             Globals.Credentials.Range["B13"].Value = "session/" + fetchedJson2["session"]["id"].ToString();
 
-            MessageBox.Show("Logado com sucesso!");
 
             Workbook workbook = Globals.ThisWorkbook.Application.ActiveWorkbook;
 
@@ -81,6 +78,8 @@ namespace StarkBankMVP
                     Utils.DisplayInfo(sheet);
                 }
             }
+            
+            MessageBox.Show("Logado com sucesso!");
 
             Close();
         }
